@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<title>Texas State and Counties</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css" />
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: #f5f5f5;
+			font-family: "Noto Sans", sans-serif;
+			color: #3d3d3d;
+		}
+
+		section {
+			width: 80%;
+			margin: 20px auto;
+		}
+
+		h1 {
+			font-family: Lora, serif;
+			letter-spacing: .04em;
+		}
+
+		h2 {
+			font-family: Lora, serif;
+			letter-spacing: .04em;
+		}
+
+		p {
+			font-size: 1em;
+			line-height: 1.5em;
+		}
+
+		a {
+			color: #005daa;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		ul {
+			padding-left: 20px;
+		}
+
+		li {
+			margin: 10px 0
+		}
+	</style>
+</head>
+
+<body>
+	<section>
+
+		<h1>Unemployment Rate in Kentucky and Ohio by County</h1>
+		<!-- Uncomment the iframe tag (inline web page frame) to show your slippy map, if you choose to make a slippy map -->
+		<iframe src="tiles.html" width="100%" height="640px"></iframe>
+
+		<h2>Description</h2>
+
+		<p></p>
+
+		<h3>Map details</h3>
+		<p>
+			Author: Kangwook Noh
+		</p>
+			<p>
+				Created on QGIS version 3.34 using OpenStreetMap data harvested from the QuickOSM plugin. &copy; 2022 Openstreet map contributors.
+			</p>
+			<p>Created a zoomable map using 'Generate XYZ Tiles (Derectory)' and adding a label with a rule based labeling on the zoom.</p>
+			<p>Data extracted from the 2022 version of the Cartographic Boundary Files by County dataset on the United States Census Bureau from
+				<li><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">
+					https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
+				</a></li>.
+
+			</p>
+			
+
+		<ul>
+			<!-- Change the following contacts to your personal brand, whatever you want it to be! -->
+			<li>See this project on my GitHub:
+				<a href="https://github.com/Wookienoh09/will-be-named">Wookienoh09</a>
+			</li>
+		</ul>
+	</section>
+
+
+</body>
+
+</html>
