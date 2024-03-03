@@ -106,9 +106,9 @@ Joins are not permanent by default. Therefore, you are encouraged to save the jo
 
 ## Creating a Zoomable Map
 
-For creating a zoomable map, I use 'Generate XYZ Tiles (Directory) tool. This zoomable map will show county names as labels as the user zooms in on the map. Following contents are the steps to create the map.
+To craft a dynamic, zoomable map, I leverage the 'Generate XYZ Tiles (Directory)' tool. This zoomable map will show county names as labels as users zooms in on the map. Following contents are the steps to create the map.
 
-First, we will set county names to show on the map. Right-click on the county layer, go to Properties, and go to labels. Set the label type as "Rule-based labeling" and then click on Plus sign to add the label. Seting should look like below:
+First, we will set county names to show up on the map. Right-click on the county layer, access Properties, and navigate to the labels section. Opt for "Rule-based labeling," and click on the plus sign to incorporate the label. The settings should resemble the following:
 
 ![rule-based labeling](Graphics/11.png)
 
