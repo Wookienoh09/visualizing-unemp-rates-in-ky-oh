@@ -6,7 +6,7 @@ Explore the dynamic visualizations of unemployment rates in Kentucky and Ohio at
 
 - [Introduction](#introduction)
 - [Data Source](#data-source)
-- [Mapping Unemployment Trends: A Step-by-Step Guide](#mapping-unemployment-trends-:-a-step-by-step-guide)
+- [Mapping Unemployment Trends: A Step-by-Step Guide](#mapping-unemployment-trends-a-step-by-step-guide)
 - [Summary](#summary)
 - [Final Map](#final-project-link)
 
@@ -21,11 +21,9 @@ The maps were developed to visually communicate the spatial distribution of unem
 * Initial Data projection: North American Datum, 1983, ESPG: 4269.
 * Final map projection: World Geodetic System, 1984, EPSG: 4326.
 * State and county data: U.S. Census Bureau TIGER Lines: [County TIGER Lines](https://www2.census.gov/geo/tiger/TIGER2023/COUNTY/).
-* Unemployment Rates data: U.S. Department of Agriculture: [Economic Research Service]([https://www2.census.gov/geo/tiger/TIGER2023/COUNTY/](https://www.ers.usda.gov/data-products/county-level-data-sets/county-level-data-sets-download-data/).
+* Unemployment Rates data: U.S. Department of Agriculture: [Economic Research Service](https://www.ers.usda.gov/data-products/county-level-data-sets/county-level-data-sets-download-data/).
 
 ## Mapping Unemployment Trends: A Step-by-Step Guide
-
-
 
 ### Downloading Necessary Data
 
@@ -45,28 +43,29 @@ After downloading the excel file, change the file type to csv file by 'Save a Co
 
 *Change file type from Excel to CSV*
 
-Open QGIS and first drag state and county data - 'cb_2022_us_state_500k' and 'cb_2022_us_county_500k' to layer. 
-For 
+Open QGIS and first drag state and county data in zip files - 'cb_2022_us_state_500k.zip' and 'cb_2022_us_county_500k.zip' to layer. 
+For unemployment csv file, before adding the file to the layer, notice that the column names starts on the fifth row, and every row after that is a record of each name. The data contains information such as "FIPS_Code", "State", number of employed, unemployed and unemployment rates by each year. The column of 'FIPS_Code' will come useful as we will use these codes when we join this layer to the county layer. 
 
-There are several steps to make this map with multiple data sources to consider. Firstly, lets start off with the toolset we will need: the visibility analysis plugin. If you are interested in learning more about this plugin, the GitHub repository for it can be found [here](https://github.com/zoran-cuckovic/QGIS-visibility-analysis/). Otherwise, navigate to QGIS, and in the top-most tab selections, click plugin. In the "All" window, search for "Visibility Analysis". 
+![excel features](Graphics/10.png)
 
-![visibility analysis plugin window](graphics/VisibilityAnalysisPlugin.JPG)
+*Unemployment Rate Data Features*
 
-*Visibility analysis plugin window in QGIS*
+Go back to QGIS and select Add Layer > Add Delimited Text Layer. Next, set 'Number of header lines to discard' under 'Record and Fields Options' as 4 as the column names starts on the fifth row. 
+The setting should look like the picture below.
 
-After the plugin is added, we need to consider our source for our digital elevation model (DEM). There are several choices that can be made for DEM, but the best and easiest one available to us would be to download SRTM 30-meter DEM tiles. There happens to be an entire webpage to download this information, which can be found here: [30-Meter SRTM Tile Downloader](https://dwtkns.com/srtm30m/). I have found this source to be much easier to use than from the USGS's webpage to download the same data, as you only need to create an account to download any tile you want that covers the entire globe. Neat!
+![add csv file as a layer](Graphics/5.png)
 
-When you navigate to this webpage, you will need to create your own account. Click on your desired tile, and create your account.
+*Adding CSV file as a layer*
 
-![SRTM Tile](graphics/SRTM%20Tile%20Downloader.JPG)
+After adding csv as a layer, go to 'Open Attribute Table'. 
 
-*SRTM Tile for RRG visibility analysis*
 
-![create account for SRTM Tile Download](graphics/URSEarthDataNasa%20Account.JPG)
 
-*Details to create an account to download 30-meter SRTM tiles*
 
-This step is not mandatory, but was performed for this analysis and that was to add KyFromAbove imagery data from their map server to be used directly in QGIS. The KyFromAbove program does a really great job of providing GIS data that is easy to use for the public. As a bonus, the resolution on the imagery for the entire state is offered at 6 inches, allowing for amazing detail for our cartographic use!
+
+
+
+
 
 To connect to the map server, you will need to navigate in QGIS to the Browser panel, and then right click on XYZ  Tiles -> New Connection. In the resulting window, copy and paste the URL for the KyFromAbove Map server:
 
