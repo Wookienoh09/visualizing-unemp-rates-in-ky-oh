@@ -46,7 +46,7 @@ After downloading the excel file, change the file type to csv file by 'Save a Co
 Open QGIS and first drag state and county data in zip files - 'cb_2022_us_state_500k.zip' and 'cb_2022_us_county_500k.zip' to layer. 
 For unemployment csv file, before adding the file to the layer, notice that the column names starts on the fifth row, and every row after that is a record of each name. The data contains information such as "FIPS_Code", "State", number of employed, unemployed and unemployment rates by each year. The column of 'FIPS_Code' will come useful as we will use these codes when we join this layer to the county layer. 
 
-![excel features](Graphics/6.png)
+![excel features](Graphics/10.png)
 
 *Unemployment Rate Data Features*
 
