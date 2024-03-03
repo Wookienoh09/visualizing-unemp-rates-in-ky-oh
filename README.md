@@ -48,6 +48,8 @@ For unemployment csv file, before adding the file to the layer, notice that the 
 
 ![excel features](Graphics/6.png)
 
+*Unemployment Rate Data Features*
+
 Go back to QGIS and select Add Layer > Add Delimited Text Layer. Next, set 'Number of header lines to discard' under 'Record and Fields Options' as 4 as the column names starts on the fifth row. 
 The setting should look like the picture below.
 
