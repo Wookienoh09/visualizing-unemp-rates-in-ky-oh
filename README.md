@@ -7,6 +7,7 @@ Explore the dynamic visualizations of unemployment rates in Kentucky and Ohio at
 - [Introduction](#introduction)
 - [Data Source](#data-source)
 - [Mapping Unemployment Trends: A Step-by-Step Guide](#mapping-unemployment-trends-:-a-step-by-step-guide)
+- [Mapping Unemployment Trends: A Step-by-Step Guide](#mapping-unemployment-trends-a-step-by-step-guide)
 - [Summary](#summary)
 - [Final Map](#final-project-link)
 
