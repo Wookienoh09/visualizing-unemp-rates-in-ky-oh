@@ -21,7 +21,7 @@ The maps were developed to visually communicate the spatial distribution of unem
 * Initial Data projection: North American Datum, 1983, ESPG: 4269.
 * Final map projection: World Geodetic System, 1984, EPSG: 4326.
 * State and county data: U.S. Census Bureau TIGER Lines: [County TIGER Lines](https://www2.census.gov/geo/tiger/TIGER2023/COUNTY/).
-* Unemployment Rates data: U.S. Department of Agriculture: [Economic Research Service]([https://www2.census.gov/geo/tiger/TIGER2023/COUNTY/](https://www.ers.usda.gov/data-products/county-level-data-sets/county-level-data-sets-download-data/).
+* Unemployment Rates data: U.S. Department of Agriculture: [Economic Research Service](https://www.ers.usda.gov/data-products/county-level-data-sets/county-level-data-sets-download-data/).
 
 ## Mapping Unemployment Trends: A Step-by-Step Guide
 
