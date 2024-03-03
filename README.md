@@ -185,4 +185,4 @@ These maps are tools for users seeking insights into regional economic dynamics.
 
 ## Link to the Final Project
 
-Please view the final map online [here](https://Wookienoh09.github.io/visualizing-unemp-rates-in-ky-oh).
+Please view the final map online [here](https://Wookienoh09.github.io/visualizing-unemp-rates-in-ky-oh/map-options/index.html).
