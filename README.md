@@ -37,6 +37,8 @@ First, let's start off with downloading necessary data and join them to the coun
 ![state level data](Graphics/3.png)
 *Downloading Unemployment Rates data from the U.S. Department of Agriculture*
 
+### Adding the Data as Layers on QGIS
+
 After downloading the excel file, change the file type to csv file by 'Save a Copy' -> 'File Format' -> 'CSV UTF-8'.
 
 ![changing excel to csv extension](Graphics/4.png)
@@ -63,11 +65,44 @@ Please use the following settings when importing to QGIS.
 
 *Adding CSV file as a layer*
 
-After adding csv as a layer, 
+After adding csv as a layer, we will join the unemployment CSV file with county layer. When you open the attribute table, you will notice that there is a numerical value both data shares - "FIPS_Code" from the CSV file and "GEOID" from the county layer. We will use these features to join the two layers.
+First, right click on the county layer that you added, open the Layer Properties, and then select join, which is the symbol with the dot followed by a triangle.
 
+![accessing the join](Graphics/12.png)
 
+*Accessing the Join*
 
+Click the Plus button at the bottom of the window to initiate the join. On "Join layer", unemployment CSV file. On the "Join field", we will use FIPS_Code on CSV file. Then, on the "Target field", we will use "GEOID" from the county layer to merge the two dataset. The setting will look like the following:
 
+![accessing the join](Graphics/7.png)
+
+*Joining Unemployment Rate layer with County layer*
+
+After creating the join, open the attribute table to see if the unemployment rates have been successfully added to the county layer.
+
+![checking the successful join](Graphics/8.png)
+
+*Checking the attribute table for successful join*
+
+### Symbolizing Unemployment Rate Layer
+
+After confirming the data addition, return to the symbology tab, select "Graduated", and configure the settings in the Value field to:
+
+ ```
+to_real("Unemployment_Unemployment_rate_2022")
+ ```
+
+You are encouraged to choose any color ramp that suits your preferences — there's no obligation to use the ones demonstrated. If you append a percent sign (%) to the right of the %2 in the legend format, the legend will display a percent sign as intended. I select number of Classes as '5' for my maps.
+
+![symbolize the unemployment data](Graphics/9.png)
+
+*Symbolizing unemployment rate layer*
+
+### Don't forget to save the feature as GeoJSON!
+
+Joins are not permanent by default. Therefore, you are encouraged to save the join layers to a new layer. Right-click the layer and Export > Save Feature As... to a new GeoJSON.
+
+## Creating a Zoomable Map
 
 
 
