@@ -3,12 +3,14 @@
 
 <head>
 	<meta charset=utf-8 />
-	<title>Texas State and Counties</title>
+	<!-- Below is the title of the document -->
+	<title>Unemployment Rates (2022) of KY and OH by County</title>
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css" />
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,900i" rel="stylesheet">
 
 	<style>
 		body {
@@ -56,16 +58,30 @@
 		li {
 			margin: 10px 0
 		}
+
+		#map {
+			width: 100%;
+			margin: 0px auto;
+		}
+
+		.max-width-img {
+			width: 100%;
+		}
+
+		 
 	</style>
 </head>
 
 <body>
 	<section>
-
-		<h1>Unemployment Rate (2022) in Kentucky and Ohio by County</h1>
+	
+		<h1>Visualizing Unemployment Trends: A County-Level Analysis of Kentucky and Ohio</h1>
 		<!-- Uncomment the iframe tag (inline web page frame) to show your slippy map, if you choose to make a slippy map -->
 		<iframe src="tiles.html" width="100%" height="640px"></iframe>
+		<a href="tiles.html" class="linkbox">Full-screen version</a>-->
 
+			
+	
 		<h2>Description</h2>
 
 		<p></p>
@@ -75,15 +91,45 @@
 			Author: Kangwook Noh
 		</p>
 			<p>
-				Created on QGIS version 3.34 using OpenStreetMap data harvested from the QuickOSM plugin. &copy; 2022 Openstreet map contributors.
+			This map presents the latest available unemployment rate data for Kentucky and Ohio in 2022, categorized by county. Notably, a distinct 
+			pattern emerges as higher unemployment rates are prominently observed in the eastern counties along Appalachia for both states. Conversely, 
+			counties situated in the central regions of both Kentucky and Ohio exhibit lower unemployment rates. Additionally, there is a noticeable consistency 
+			in unemployment rates among counties along the state border, highlighting a shared economic trend in those areas.
+				
 			</p>
-			<p>Created a zoomable map using 'Generate XYZ Tiles (Derectory)' and adding a label with a rule based labeling on the zoom.</p>
-			<p>Data extracted from the 2022 version of the Cartographic Boundary Files by County dataset on the United States Census Bureau from
-				<li><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">
-					https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
-				</a></li>.
+			<hr>
+			<p>
+				Below map shows the change in unemployment rates over time between 2000 to 2022. Map descriptions on the image.
 
 			</p>
+			
+
+						<!-- The image element uses the the 'src' property to show an image on the page. -->
+						<img src="Map/unemp_ky_oh_600dpi.jpg" class="max-width-img" alt="Comparison of Unemployment Rates in KY and OH in the years between 2000 and 2022">
+			
+						<a href='Map/unemp_ky_oh_1200dpi.jpg' class="linkbox">Higher resolution version</a>-->
+					
+			<h3>Data</h3>
+			<p>State and County level data (2022) extracted from the 2022 version of the Cartographic Boundary Files by County dataset on the United States Census Bureau from
+				<li><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">
+					https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html
+				</a></li>
+
+			</p>
+			<p>Unemployment rates data (2000 to 2022) extraced from U.S. Department of Agriculture.
+				<li><a href="https://www.ers.usda.gov/data-products/county-level-data-sets/county-level-data-sets-download-data/">
+					https://www.ers.usda.gov/data-products/county-level-data-sets/county-level-data-sets-download-data/
+				</a>
+				</li>
+
+			</p>
+			<h3>Tools used in this project</h3>
+			<ul>
+				<li>QGIS Version 3.34 to create state and county boundary.</li>
+				<li>'Generate XYZ Tiles (Directory)' and adding a label with a rule based labeling on the zoom.</li>
+				<li>'Add Delimited Text Layer' to create unemployment rates layer using csv file.</li>
+				<li>'Symbology' -> 'Graduated' to create variation of unemployment rates by county and assign color ramp.</li>
+			</ul>
 			
 
 		<ul>
@@ -92,6 +138,13 @@
 				<a href="https://github.com/Wookienoh09/will-be-named">Wookienoh09</a>
 			</li>
 		</ul>
+
+
+		<hr>
+		
+		<h4>--><a href="https://uky-gis.github.io">UKy GIS and Mapping</a></h4> 
+        <a href="https://uky-gis.github.io">
+            <img src="logo-color-400px.png" alt="Uinversity of Kentucky Geography"></a>
 	</section>
 
 
