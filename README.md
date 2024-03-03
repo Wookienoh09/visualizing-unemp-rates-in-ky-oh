@@ -132,7 +132,7 @@ Open Visual Studio Code and select this repository folder, and edit index.html a
 <iframe src="tiles.html" width="100%" height="640px"></iframe>
 		<a href="tiles.html" class="linkbox">Full-screen version</a>-->
  ```
-to add Full-screen version.
+to add Full-screen version of the zoomable map on the webpage.
 
 ## Creating a Comparison Map
 
@@ -142,7 +142,7 @@ Next is creating a comparison map that shows unemployment rates in Kentucky and 
 to_real("Unemployment_Unemployment_rate_2000")
  ```
 
-to create Map 1 for showing unemployment rates in 2000. Then on QGIS, open Project -> New Print Layout -> Name the Layout. When you reach the layout, specify a page size to 12 inches in width and 18 inches in height, and insert the map and legend into this layout. 
+on the 'Value Field' to create Map 1 for showing unemployment rates in 2000. Then on QGIS, open Project -> New Print Layout -> Name the Layout. When you reach the layout, specify a page size to 12 inches in width and 18 inches in height, and insert the map and legend into this layout. 
 
 ![Layout setting](Graphics/16.png)
 
@@ -156,7 +156,7 @@ Next, we will add unemployment rate in 2022. Use the following
 to_real("Unemployment_Unemployment_rate_2022")
  ```
 
-to create Map 2 for showing unemployment rates in 2022. Add description and other necessary metadata to help viewers in interpreting the map.
+to create Map 2 for showing unemployment rates in 2022. Insert the map and add legend, description and other necessary metadata to help viewers in interpreting the map.
 
 ![finished comparison map](Graphics/15.png)
 
