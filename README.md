@@ -176,7 +176,7 @@ in the index.html. Add
  ```
 below the previous code to add a link to higher resolution version. Finalize the webpage by putting tools used in this project, link to this GitHub repository and GIS mapping logo.
 
-### Summary
+## Summary
 
 The creation of these maps serves the purpose of providing a comprehensive visual representation of unemployment trends in Kentucky and Ohio. The zoomable map, generated using the 'Generate XYZ Tiles (Directory)' tool, offers an interactive experience by displaying county names as labels upon zooming. This map allows users to explore detailed unemployment data at various levels of scale.
 
