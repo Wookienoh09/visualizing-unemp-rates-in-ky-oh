@@ -116,7 +116,7 @@ First, we will set county names to show up on the map. Right-click on the county
 
 After setting the label, go to the Generate XYZ Tiles (Directory) and select the Extent > Draw on Map Canvas.
 
-![draw on map canvas](Graphics/13.png)
+![draw on map canvas](Graphics/17.png)
 
 *Generate XYZ Tiles (Directory) and using Draw on Map Canvas option*
 
