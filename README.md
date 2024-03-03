@@ -2,33 +2,51 @@
 
 Explore the dynamic visualizations of unemployment rates in Kentucky and Ohio at the county level through these interactive maps [here](http://127.0.0.1:5500/map-options/index.html)! The first map is a zoomable map providing a detailed overview of 2022 unemployment rates in both states. Meanwhile, the second map offers insights into the evolution of unemployment rates from 2000 to 2022, allowing for a historical perspective. These maps are designed to illustrate the nuanced variations in unemployment rates across counties, shedding light on regions facing more pronounced challenges in terms of unemployment.
 
-## Project Contents
+## Table of Contents
 
-- [Background](#background)
-- [Purpose](#purpose)
+- [Introduction](#introduction)
 - [Data Source](#data-source)
-- [Creating the Map](#creating-the-map)
+- [Mapping Unemployment Trends: A Step-by-Step Guide](#mapping-unemployment-trends:-a-step-by-step-guide)
 - [Summary](#summary)
 - [Final Map](#final-project-link)
 
 ***
 
-### Background
+## Introduction
 
-Analyzing variations in unemployment rates by county is crucial for targeted policymaking, resource allocation, and community development. Firstly, visualization of county-level data helps policymakers identify regions with higher unemployment rates, enabling the implementation of targeted interventions to stimulate economic growth and job creation where needed most. Secondly, for individuals and businesses, understanding county-level variations guides strategic decisions, such as workforce mobility and location choices. Lastly, the data assists in evaluating the effectiveness of existing policies, ensuring that resources are allocated efficiently, and contributes to the overall understanding of regional economic dynamics for sustainable community development. Therefore, examining unemployment variations at the county level serves as a vital tool for fostering regional economic resilience and addressing disparities.
+The maps were developed to visually communicate the spatial distribution of unemployment rates in Kentucky and Ohio, emphasizing variations across counties and highlighting regions facing significant challenges. The map depicting the progression of unemployment rates from 2000 to 2022 in Kentucky and Ohio can serve as a valuable tool for policymakers, businesses, and community leaders through a comparative analysis. The zoomable map, on the other hand, enhances user engagement by providing the ability to pinpoint specific counties and access their corresponding unemployment rates. Analyzing variations in unemployment rates by county is crucial for targeted policymaking, resource allocation, and community development. Firstly, visualization of county-level data helps policymakers identify regions with higher unemployment rates, enabling the implementation of targeted interventions to stimulate economic growth and job creation where needed most. Secondly, for individuals and businesses, understanding county-level variations guides strategic decisions, such as workforce mobility and location choices. Lastly, the data assists in evaluating the effectiveness of existing policies, ensuring that resources are allocated efficiently, and contributes to the overall understanding of regional economic dynamics for sustainable community development. Therefore, examining unemployment variations at the county level serves as a vital tool for fostering regional economic resilience and addressing disparities.
 
-### Purpose
-
-The maps were developed to visually communicate the spatial distribution of unemployment rates in Kentucky and Ohio, emphasizing variations across counties and highlighting regions facing significant challenges. The map depicting the progression of unemployment rates from 2000 to 2022 in Kentucky and Ohio can serve as a valuable tool for policymakers, businesses, and community leaders through a comparative analysis.
-
-### Data Source
+## Data Source
 
 * Initial Data projection: North American Datum, 1983, ESPG: 4269.
 * Final map projection: World Geodetic System, 1984, EPSG: 4326.
-* State and county data: U.S. Census Bureau TIGER Lines: [County TIGER Lines](https://www2.census.gov/geo/tiger/TIGER2023/COUNTY/)
-* Unemployment Rates data: U.S. Department of Agriculture: [Economic Research Service]([https://www2.census.gov/geo/tiger/TIGER2023/COUNTY/](https://www.ers.usda.gov/data-products/county-level-data-sets/county-level-data-sets-download-data/))
+* State and county data: U.S. Census Bureau TIGER Lines: [County TIGER Lines](https://www2.census.gov/geo/tiger/TIGER2023/COUNTY/).
+* Unemployment Rates data: U.S. Department of Agriculture: [Economic Research Service]([https://www2.census.gov/geo/tiger/TIGER2023/COUNTY/](https://www.ers.usda.gov/data-products/county-level-data-sets/county-level-data-sets-download-data/).
 
-### Creating the Map
+## Mapping Unemployment Trends: A Step-by-Step Guide
+
+
+
+### Downloading Necessary Data
+
+First, let's start off with downloading necessary data and join them to the county geometries. There are three datasets we will use - state and county level datasets from the [U.S. Census Bureau](https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html) and unemployment rates from the [U.S. Department of Agriculture](https://www.ers.usda.gov/data-products/county-level-data-sets/county-level-data-sets-download-data/). On the U.S. Census Bureau webpage, download 1:500k (national) shapefiles under 'Counties' and 'States' titles. On the U.S. Department of Agriculture webpage, download 'Unemployment and median household income for the U.S., States, and counties, 2000–22' excel file. 
+
+![state level data](Graphics/2.png)
+![county level data](Graphics/1.png)
+
+*Downloading state and county level data from the U.S. Census Bureau*
+
+![state level data](Graphics/3.png)
+*Downloading Unemployment Rates data from the U.S. Department of Agriculture*
+
+After downloading the excel file, change the file type to csv file by 'Save a Copy' -> 'File Format' -> 'CSV UTF-8'.
+
+![changing excel to csv extension](Graphics/3.png)
+
+*Change file type from Excel to CSV*
+
+Open QGIS and first drag state and county data - 'cb_2022_us_state_500k' and 'cb_2022_us_county_500k' to layer. 
+For 
 
 There are several steps to make this map with multiple data sources to consider. Firstly, lets start off with the toolset we will need: the visibility analysis plugin. If you are interested in learning more about this plugin, the GitHub repository for it can be found [here](https://github.com/zoran-cuckovic/QGIS-visibility-analysis/). Otherwise, navigate to QGIS, and in the top-most tab selections, click plugin. In the "All" window, search for "Visibility Analysis". 
 
