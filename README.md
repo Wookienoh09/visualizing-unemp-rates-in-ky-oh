@@ -41,7 +41,7 @@ First, let's start off with downloading necessary data and join them to the coun
 
 After downloading the excel file, change the file type to csv file by 'Save a Copy' -> 'File Format' -> 'CSV UTF-8'.
 
-![changing excel to csv extension](Graphics/3.png)
+![changing excel to csv extension](Graphics/4.png)
 
 *Change file type from Excel to CSV*
 
