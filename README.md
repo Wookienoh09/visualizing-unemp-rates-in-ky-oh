@@ -1,6 +1,6 @@
 # Visualizing Unemployment Trends: A County-Level Analysis of Kentucky and Ohio
 
-Explore the dynamic visualizations of unemployment rates in Kentucky and Ohio at the county level through these interactive maps [here](http://127.0.0.1:5500/map-options/index.html)! The first map is a zoomable map providing a detailed overview of 2022 unemployment rates in both states. Meanwhile, the second map offers insights into the evolution of unemployment rates from 2000 to 2022, allowing for a historical perspective. These maps are designed to illustrate the nuanced variations in unemployment rates across counties, shedding light on regions facing more pronounced challenges in terms of unemployment.
+Explore the dynamic visualizations of unemployment rates in Kentucky and Ohio at the county level through these interactive maps [here](https://Wookienoh09.github.io/visualizing-unemp-rates-in-ky-oh/map-options/index.html)! The first map is a zoomable map providing a detailed overview of 2022 unemployment rates in both states. Meanwhile, the second map offers insights into the evolution of unemployment rates from 2000 to 2022, allowing for a historical perspective. These maps are designed to illustrate the nuanced variations in unemployment rates across counties, shedding light on regions facing more pronounced challenges in terms of unemployment.
 
 ## Table of Contents
 
@@ -162,6 +162,7 @@ to create Map 2 for showing unemployment rates in 2022. Insert the map and add l
 
 *Finished comparison map*
 
+If you would like to view this map, please click [here](https://github.com/Wookienoh09/visualizing-unemp-rates-in-ky-oh/blob/main/map-options/Map/unemp_ky_oh_600dpi.jpg).
 After creating the map, insert the image to the webpage by inserting
 
  ```
