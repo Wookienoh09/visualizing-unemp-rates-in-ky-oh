@@ -10,7 +10,7 @@ Explore the dynamic visualizations of unemployment rates in Kentucky and Ohio at
 - [Creating a Zoomable Map](#creating-a-zoomable-map)
 - [Creating a Comparison Map](#creating-a-comparison-map)
 - [Summary](#summary)
-- [Final Map](#final-project-link)
+- [Link to the Final Project](#link-to-the-final-project)
 
 ***
 
@@ -148,7 +148,7 @@ on the 'Value Field' to create Map 1 for showing unemployment rates in 2000. The
 
 *Setting the Layout format*
 
-Make sure to lock layers and lock styles for layers so when we add the next map, the setting for this map won't be affected.
+Make sure to lock layers and lock styles for layers so when we add the next map, the setting for this map won't be affected. Locking can be found when you click on a map, click 'Item Properties'.
 
 Next, we will add unemployment rate in 2022. Use the following
 
@@ -177,16 +177,12 @@ below the previous code to add a link to higher resolution version. Finalize the
 
 ### Summary
 
-Based on the analysis produced, it looks like there is a lot of overlapping visibility in Red River Gorge, no matter which hike you decide to take!
+The creation of these maps serves the purpose of providing a comprehensive visual representation of unemployment trends in Kentucky and Ohio. The zoomable map, generated using the 'Generate XYZ Tiles (Directory)' tool, offers an interactive experience by displaying county names as labels upon zooming. This map allows users to explore detailed unemployment data at various levels of scale.
 
-In the western-most portion of the analysis, around Courthouse Rock, Haystack Rock, and Raven Rock, there appears to be a lot of overlapping visibility from those viewpoints. In particular, there is a section west of those points which offers a lot of great views across the Red River valley inside Red River Gorge! Not only that, there are great views as you look North and East from these locations towards the eastern portion of this analysis. 
+The comparison maps, on the other hand, depict the evolution of unemployment rates from 2000 to 2022, highlighting distinctive trends between Ohio and Kentucky. Notably, Ohio's counties generally exhibit an overall decline in unemployment rates, while Kentucky's rates show a comparatively slower reduction, particularly in its eastern counties.
 
-The eastern-most section, I thought, would provide the more consistent visibility overlap in this area, and it turns out that might be true! While there does not appear to be a large amount of "4" visibility rating areas, there is a consistent amout of "2" and "3" rated areas. this means that if you decide to hike Hansen's Point, Half Moon Arch, or Chimney Top Rock, you are like to see the same things as hikers on these oppposing trails. It will just be from a different perspective!
+These maps are tools for users seeking insights into regional economic dynamics. They facilitate to help the users' understanding of unemployment variations over time and space. Policymakers, businesses, and communities can leverage these visualizations to inform decision-making, allocate resources strategically, and address specific economic challenges within the states of Kentucky and Ohio. 
 
-Viewpoints from Cloud Splitter and Adena Arch were also added to analyze visibility from these areas and if there are any overlapping visbilities from Hansen's Point, Half Moon Arch, or Chimney Top Rock. Turns out, Adena Arch might only share visibilty ranges with Cloud Splitter, as there is only an overlapping visibility rating of "2" in areas south of Adena Arch. There is shared visibility north of Cloud Splitter with Adena Arch, but there might also be shared visibility ranges with other popular hiking desintations, possibly with Chimney Top Rock or Hansen's Point. 
+## Link to the Final Project
 
-While this is an entirely informational purpose, this gives an interesting perspective of mapping opportunities within Red River Gorge, and where you can expect to see from any one hiking destination. Now is your chance to go out and experience this magical landscape!
-
-## Final Project Link
-
-Please view the [final map online](https://Geodood19.github.io/map671FinalProject).
+Please view the final map online [here](https://Geodood19.github.io/map671FinalProject).
