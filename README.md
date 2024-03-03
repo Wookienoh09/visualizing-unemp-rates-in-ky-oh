@@ -7,6 +7,8 @@ Explore the dynamic visualizations of unemployment rates in Kentucky and Ohio at
 - [Introduction](#introduction)
 - [Data Source](#data-source)
 - [Mapping Unemployment Trends: A Step-by-Step Guide](#mapping-unemployment-trends-a-step-by-step-guide)
+- [Creating a Zoomable Map](#creating-a-zoomable-map)
+- [Creating a Comparison Map](#creating-a-comparison-map)
 - [Summary](#summary)
 - [Final Map](#final-project-link)
 
@@ -92,7 +94,7 @@ After confirming the data addition, return to the symbology tab, select "Graduat
 to_real("Unemployment_Unemployment_rate_2022")
  ```
 
-You are encouraged to choose any color ramp that suits your preferences — there's no obligation to use the ones demonstrated. If you append a percent sign (%) to the right of the %2 in the legend format, the legend will display a percent sign as intended. I select number of Classes as '5' for my maps.
+You are encouraged to choose any color ramp that suits your preferences — there's no obligation to use the ones demonstrated. If you append a percent sign (%) to the right of the %2 in the legend format, the legend will display a percent sign as intended. I select number of Classes as '5' for my maps. The corresponding legend breaks can be editing by double clicking on the legend label and typing in the bound that matches the new class bounds.
 
 ![symbolize the unemployment data](Graphics/9.png)
 
@@ -104,99 +106,74 @@ Joins are not permanent by default. Therefore, you are encouraged to save the jo
 
 ## Creating a Zoomable Map
 
+For creating a zoomable map, I use 'Generate XYZ Tiles (Directory) tool. This zoomable map will show county names as labels as the user zooms in on the map. Following contents are the steps to create the map.
 
+First, we will set county names to show on the map. Right-click on the county layer, go to Properties, and go to labels. Set the label type as "Rule-based labeling" and then click on Plus sign to add the label. Seting should look like below:
 
+![rule-based labeling](Graphics/11.png)
 
+*Setting Rule-based labeling*
 
-To connect to the map server, you will need to navigate in QGIS to the Browser panel, and then right click on XYZ  Tiles -> New Connection. In the resulting window, copy and paste the URL for the KyFromAbove Map server:
+After setting the label, go to the Generate XYZ Tiles (Directory) and select the Extent > Draw on Map Canvas.
 
- ```html
- https://kyraster.ky.gov/arcgis/rest/services
+![draw on map canvas](Graphics/13.png)
+
+*Generate XYZ Tiles (Directory) and using Draw on Map Canvas option*
+
+My scale was set at 1:2000000 before I drew the box over the map. After drawing the box, set minimum zoom as '4' and maximum zoom as '12'. You can select it as you prefer. Then, I set 'Output directory' as
+ ```
+map-options/tiles
  ```
 
- Yes, in QGIS we can link to ArcGIS rest services and use data from those free sources! Great! Now we have all the KyFromAbove imagery and elevation data collected across the entire state to use for mapping. 
+and set 'Output html (Leaflet)' on the Leaflet.html provided through this course which is available under map-options folder here. I created a folder called 'tiles' for QGIS to add tiles of the zoomable map to this folder. Then run the program. After running it, if you go back to tiles folder, you will notice there are folders from 4 to 12, the min and max zoom level you set.
+Open Visual Studio Code and select this repository folder, and edit index.html and tiles.html such as title, header, description etc. I alse added 
 
- ![KyFromAbove XYZ Conection](graphics/Connect%20to%20KyFromAbove%20Server.JPG)
+ ```
+<iframe src="tiles.html" width="100%" height="640px"></iframe>
+		<a href="tiles.html" class="linkbox">Full-screen version</a>-->
+ ```
+to add Full-screen version.
 
- *KyFromAbove XYZ Connection window*
+## Creating a Comparison Map
 
- For the toolset to work, after we add the plugin, we have to use a coordinate system whose units are in meters. So all of our data will have to be in meters, as well as our projected coordinate system. Go to the Project tab, and then click on Properties. In the CRS tab, search for EPSG 6346. This the **NAD83 (2011) / UTM zone 17N** projected coordinate system (PCS), and it happens to be a PCS with meters as the unit of measurement. This should be our best option for this analysis as far as PCS goes, but if you find another one is more suitable feel free to use that one  instead.
+Next is creating a comparison map that shows unemployment rates in Kentucky and Ohio in the years 2000 and 2022. Go back to the joined unemployment rate layer, 'Symology' and use
 
- This next step is *very* important for the purposes of this analysis. We need to get our DEM file into the same PCS as our project and our overlook shapefile. You **CANNOT** Export this DEM layer and save it as a new layer in the desired PCS. For some reason, when you do this, the viewshed analysis will fail to run and gives an error message of your elevation layer being in the incorrect coordinate system. Even if you do this, and you see that your DEM layer is in the PCS that you want, it will still fail when you use it in the first step of the analysis. You must use the *Warp* geoprocessing tool to get this in the correct projection. Details of this are in the below screenshot.
+ ```
+to_real("Unemployment_Unemployment_rate_2000")
+ ```
 
- ![Warp](graphics/Warp_ReprojectTool.JPG)
+to create Map 1 for showing unemployment rates in 2000. Then on QGIS, open Project -> New Print Layout -> Name the Layout. When you reach the layout, specify a page size to 12 inches in width and 18 inches in height, and insert the map and legend into this layout. 
 
- *Warp (Reproject) tool window.* 
+![Layout setting](Graphics/16.png)
 
- Now we should be able to go ahead and start collecting the points for our viewshed analysis! Now if you are a connoisseur of Red River Gorge and the hiking trails in the Geological Area, you could probably pick out the spots you want with just the imagery alone. But we are going to use a combination of imagery and a great basemap to pick our spots. Feel free to add any topographic basemap layer, but for the purposes of this analysis, I chose OpenStreetMap as my basemap layer to pick the spots I want. The resulting window should look similar to the below:
+*Setting the Layout format*
 
- ![OSM QGIS window](graphics/OSM_QGIS%20Viewshed.JPG)
+Make sure to lock layers and lock styles for layers so when we add the next map, the setting for this map won't be affected.
 
- *QGIS workspace after adding OpenStreetMap base layer and navigating to Red River Gorge*
+Next, we will add unemployment rate in 2022. Use the following
 
- This is where you will need to create the points to add into your analysis. Find in QGIS the *"Add New Shapefile Layer"* button and fill out the window to be something similar to what you see below.
+ ```
+to_real("Unemployment_Unemployment_rate_2022")
+ ```
 
- ![create new shapefile](graphics/CreateNewShapefile.JPG)
+to create Map 2 for showing unemployment rates in 2022. Add description and other necessary metadata to help viewers in interpreting the map.
 
- *New point shapefile with the PCS EPSG 6346*
+![finished comparison map](Graphics/15.png)
 
- If you want to better keep track of the specified overlook points you want to use, add a new field and call it *Name* so you can better keep track of what overlook you want. Now, using the basemap and the added imagery, go ahead and digitize your overlooks!
+*Finished comparison map*
 
- ![overlooks](graphics/OverlooksDigitized.JPG)
+After creating the map, insert the image to the webpage by inserting
 
- *Overlooks digitized*
+ ```
+<!-- The image element uses the the 'src' property to show an image on the page. -->
+						<img src="Map/unemp_ky_oh_600dpi.jpg" class="max-width-img" alt="Comparison of Unemployment Rates in KY and OH in the years between 2000 and 2022">
+ ```
+in the index.html. Add 
 
- As a check up, you should have the following in your QGIS Project:
-
- 1. DEM Downloaded from the SRTM 30-meter Tile Downloader website.
- 2. A reprojected DEM *using the Warp tool and **not as a new export***.
- 3. Optional Imagery and OpenStreetMap (or other) basemap layer added to reference for the digitizing step.
- 4. A point shapefile/layer digitized from the base layer and imagery.
-
- Now we can create out data for the viewshed! Since you added the *Viewshed Analysis* plugin, you have the geoprocessing tools available to you for this analysis! First, we need to create our viewpoints. In your Processing Toolbox pane, search for "*Create Viewpoints*". Fill out the tool to be similar to the following image. 
-
- ![Create Viewpoints Window](graphics/Create%20Viewpoints.JPG)
-
- *Create viewpoints window*
-
- A couple of things to note: radius of analysis and observer height. The radius of analysis chosen for this was five miles, which turns out is 8047 meters. This was to ensure the analysis was performed in a wide enough radius from each viewpoint so that there is sufficient overlap in the analysis. You can choose to reduce your viewpoint analysis if you'd like. 
-
- The observer height was chosen to be 1.8 meters, as that is the average adult height. If you were to choose an observation tower, such as the one mentioned previous in Great Smoky Mountains National Park on Clingman's Dome, you would need to set this observer height to be that of the observation tower. You could theoretically play around with this number and figure out what a 3 meter tall adult would be able to see from each viewpoint, or if there were a 15 meter observational tower at each viewpoint! More opportunities for more fun maps! For now, it is best to keep it at the average adult height since there are no towers to climb for the awesome views in Red River Gorge.
-
- You should have your viewpoints layer created! Feel free to save that as its own layer in your desired location. Now, it is time to create our viewshed!
-
- The viewshed tool outputs a raster layer that we can use to showcase the visible areas in Red River Gorge. Search for *Viewshed* in the Processing Toolbox pane. Fill in the Observer Location to be the viewpoints layer you just created, and the Digital elevation model as your DEM, in the correct PCS. 
-
- ![viewshed window](graphics/Viewshed.JPG)
-
- *Viewshed Tool*
-
- The *Viewshed* tool allows us to choose a couple of different analysis types, such as Depth below horizon and horizon. For this, we want a binary viewshed which allows us a raster output with the rating of being visible (0) or not visibile (1) from each viewpoint. 
-
- We also want to combine our multiple outputs using the Addition option. This combines what is visible between viewpoints and adds those binary values together to give a visibility rating for each pixel! The output will generate 30-meter viewshed pixels with varying pixel values. Click *Run* to execute the tool. 
-
- You should now have a temporary raster layer in your Layers pane! Great! We can style and edit this to be however we'd like. Feel free to choose whatever colors you want, but I would highly recommend having a similar color across a color ramp for your analysis. Below are the colors I chose based on their pixel value. 
-
- ![Viewshed Raster Symbology](graphics/ViewshedRasterSymbology.JPG)
-
- *Symbology window for the viewshed raster layer*
-
- You can see that the colors are all similar in that they are in the same family tree. I stuck with a light color as my first color, and then changed the values for each color to incrementally make them darker. 
-
- Couple of things to note: because we want to see **only** what is visible, we want to remove any pixel value of "0" from being shown on the map. You will also note that I also have the pixel value of "5" set to 100% transparent. The results I generated only provided me values from 0-4, so there was no need to symbolize 5 on the map. 
-
- Additionally, feel free to play around with blend modes for your map as well! This is a great way to symbolize and style raster layers in your map and can be used to spice up your maps. I wanted to use an imagery basemap in my final map, so this raster works very well with an Overlay blend mode which combines the colors in the raster with that of the next layer directly below it. The result looks similar to the below screenshot.
-
- ![Viewshed overlay raster](graphics/ViewshedOverlayBlend.JPG)
-
- *Viewshed raster with the overlay blend mode applied*
-
- Time to make the map! Now go to Project -> New Print Layout. Feel free to give this layout a name of your choice. This is your time to style the map how you want! Add a north arrow, label your viewpoints, and you can even add an overview map to give proper context of where your main map is located! Below is the final map for my submission.
-
- ![final map 300 dpi](Map/RRG_Visibility_300dpi.png)
-
- You can also find a link to a higher resolution map [here](Map/RRG_Visibility_600dpi.png). 
- 
+ ```
+	<a href='Map/unemp_ky_oh_1200dpi.jpg' class="linkbox">Higher resolution version</a>-->
+ ```
+below the previous code to add a link to higher resolution version. Finalize the webpage by putting tools used in this project, link to this GitHub repository and GIS mapping logo.
 
 ### Summary
 
